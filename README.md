@@ -1,17 +1,22 @@
 # simple_bloc
 
+<br/><br/>
 A simple alternative to the implementation created in Dimension C-137
+<br/><br/>
+[![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://pub.dev/packages/simple_bloc)
 
 ## Getting started
 
-You should ensure that you add the router as a dependency in your flutter project.
+You should ensure that you add the simple_bloc as a dependency in your flutter project.
+
+read more at [how to install](https://pub.dev/packages/simple_bloc#-installing-tab-)
 
 ```yaml
 dependencies:
   simple_bloc: "^1.0.0"
 ```
 
-##Usage
+## Usage
 
 Simple BLoC for counter app
 
@@ -33,3 +38,7 @@ class CounterBloc extends Bloc {
 }
 
 ```
+
+## Full app example
+
+checkout at [github](https://github.com/everton-e26/simple_bloc/tree/master/example)

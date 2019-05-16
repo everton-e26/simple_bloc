@@ -1,7 +1,7 @@
-import 'package:example/counter_bloc.dart';
-import 'package:example/counter_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:simple_bloc/simple_bloc.dart';
+import 'counter_bloc.dart';
+import 'counter_screen.dart';
 
 void main() => runApp(MyApp());
 

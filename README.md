@@ -1,6 +1,6 @@
 <img src="https://raw.githubusercontent.com/everton-e26/simple_bloc/master/example/assets/simple_bloc_logo_bg.jpg" width="220">
 <br/><br/>
-A simple alternative to the implementation created in Dimension C-137
+A simple alternative to the implementation of Dimension C-137
 <br/><br/>
 
 [![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://pub.dev/packages/simple_bloc)
@@ -40,5 +40,7 @@ class CounterBloc extends Bloc {
 ```
 
 ## Full app example
+
+<img src="https://raw.githubusercontent.com/everton-e26/simple_bloc/master/example/assets/app.gif" width="300">
 
 checkout at [github](https://github.com/everton-e26/simple_bloc/tree/master/example)

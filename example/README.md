@@ -1,16 +1,95 @@
 # example
 
-A new Flutter project.
+A Counter app with simple_bloc
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+example/counter_bloc.dart
 
-A few resources to get you started if this is your first Flutter project:
+```dart
+import 'package:flutter/rendering.dart';
+import 'package:simple_bloc/simple_bloc.dart';
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+class CounterBloc extends Bloc {
+  //define the controller
+  final _counterController = BlocController<int>(initalData: 0);
 
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.dev/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+  //output
+  Stream<int> get counterOut => _counterController.stream;
+
+  //input
+  VoidCallback get increment => _counterController.action((value) {
+        return ++value;
+      });
+
+  @override
+  void dispose() {
+    //dispose your controller
+    _counterController.dispose();
+  }
+}
+```
+
+example/counter_screen.dart
+
+```dart
+import 'package:flutter/material.dart';
+import 'package:simple_bloc/simple_bloc.dart';
+import 'counter_bloc.dart';
+
+class CounterScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    //get bloc form provider
+    final bloc = BlocProvider.of<CounterBloc>(context);
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Simple BLoC"),
+      ),
+      body: Center(
+        //consume output
+        child: StreamBuilder(
+          stream: bloc.counterOut,
+          builder: (_, snapshot) {
+            return Text(snapshot.data.toString());
+          },
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.add),
+        //call bloc action
+        onPressed: bloc.increment,
+      ),
+    );
+  }
+}
+```
+
+example/main.dart
+
+```dart
+
+import 'package:flutter/material.dart';
+import 'package:simple_bloc/simple_bloc.dart';
+import 'counter_bloc.dart';
+import 'counter_screen.dart';
+
+void main() => runApp(MyApp());
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    //wrap with the BlocProvider
+    return BlocProvider(
+      //add your blocs
+      blocs: [BlocBuilder(() => CounterBloc())],
+      child: MaterialApp(
+        title: 'Simple BLoC Example',
+        home: CounterScreen()
+      ),
+    );
+  }
+}
+
+
+```

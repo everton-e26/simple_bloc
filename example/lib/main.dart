@@ -12,10 +12,8 @@ class MyApp extends StatelessWidget {
       blocs: [BlocBuilder(() => CounterBloc())],
       child: MaterialApp(
         title: 'Simple BLoC Example',
-        theme: ThemeData(
-          primarySwatch: Colors.blue,
-        ),
         home: CounterScreen(),
+        debugShowCheckedModeBanner: false,
       ),
     );
   }

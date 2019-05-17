@@ -1,7 +1,8 @@
-<img src="https://raw.githubusercontent.com/everton-e26/simple_bloc/master/example/assets/simple_bloc_logo.png" width="220">
+<img src="https://raw.githubusercontent.com/everton-e26/simple_bloc/master/example/assets/simple_bloc_logo_bg.jpg" width="220">
 <br/><br/>
 A simple alternative to the implementation created in Dimension C-137
 <br/><br/>
+
 [![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://pub.dev/packages/simple_bloc)
 
 ## Getting started

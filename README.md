@@ -1,5 +1,4 @@
-# simple_bloc
-
+<img src="https://raw.githubusercontent.com/everton-e26/simple_bloc/master/example/assets/simple_bloc_logo.png" width="220">
 <br/><br/>
 A simple alternative to the implementation created in Dimension C-137
 <br/><br/>
@@ -9,12 +8,12 @@ A simple alternative to the implementation created in Dimension C-137
 
 You should ensure that you add the simple_bloc as a dependency in your flutter project.
 
-read more at [how to install](https://pub.dev/packages/simple_bloc#-installing-tab-)
-
 ```yaml
 dependencies:
   simple_bloc: "^1.0.0"
 ```
+
+read more at [how to install](https://pub.dev/packages/simple_bloc#-installing-tab-)
 
 ## Usage
 

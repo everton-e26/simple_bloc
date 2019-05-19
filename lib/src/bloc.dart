@@ -4,6 +4,7 @@ import 'package:simple_bloc/simple_bloc.dart';
 abstract class Bloc {
   BuildContext _context;
   BuildContext get context => _context;
+  void initialize();
   void dispose();
 }
 
@@ -22,6 +23,7 @@ class BlocInstanceManager {
       BlocBuilder b = blocs.firstWhere((b) => b.build is T Function());
       bloc = b.build();
       bloc._context = context;
+      bloc.initialize();
       _blocs.putIfAbsent(type, () => bloc);
     }
     return bloc;

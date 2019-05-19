@@ -1,3 +1,7 @@
+## [1.1.0] - May 19, 2019
+
+- initialize method for BLoC
+
 ## [1.0.2] - May 19, 2019
 
 - Getter for BuildContext inside BLoC instance

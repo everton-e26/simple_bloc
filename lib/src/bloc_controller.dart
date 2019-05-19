@@ -1,5 +1,8 @@
-import 'dart:ui';
 import 'package:rxdart/rxdart.dart';
+
+typedef void Function() Action();
+
+typedef void Function(T) Input<T>(T);
 
 class BlocController<T> {
   final _controller = BehaviorSubject<T>();
@@ -14,16 +17,16 @@ class BlocController<T> {
 
   Sink<T> get sink => _controller.sink;
 
-  VoidCallback action(T Function(T data) handler) {
+  Action action(T Function(T data) handler) {
     return () {
       final newValue = handler(_controller.value);
       _controller.sink.add(newValue);
     };
   }
 
-  Function(T) actionIn(T Function(T inData, T data) handler) {
-    return (inData) {
-      final newValue = handler(inData, _controller.value);
+  Input<T> input(T Function(T, T) handler) {
+    return (inputValue) {
+      final newValue = handler(inputValue, _controller.value);
       _controller.sink.add(newValue);
     };
   }

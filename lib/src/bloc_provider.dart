@@ -2,7 +2,6 @@ import 'package:flutter/widgets.dart';
 import 'package:provider/provider.dart';
 import 'package:simple_bloc/src/bloc.dart';
 import 'package:simple_bloc/src/bloc_builder.dart';
-import 'package:simple_bloc/src/bloc_instance_manager.dart';
 
 class BlocProvider extends StatefulWidget {
   final List<BlocBuilder> blocs;
@@ -15,7 +14,7 @@ class BlocProvider extends StatefulWidget {
 
   static T of<T extends Bloc>(BuildContext context) {
     final manager = Provider.of<BlocInstanceManager>(context);
-    return manager.of<T>();
+    return manager.of<T>(context);
   }
 }
 

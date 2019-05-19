@@ -7,7 +7,6 @@ A Counter app with simple_bloc
 example/counter_bloc.dart
 
 ```dart
-import 'package:flutter/rendering.dart';
 import 'package:simple_bloc/simple_bloc.dart';
 
 class CounterBloc extends Bloc {
@@ -17,8 +16,9 @@ class CounterBloc extends Bloc {
   //output
   Stream<int> get counterOut => _counterController.stream;
 
-  //input
-  VoidCallback get increment => _counterController.action((value) {
+  //action
+  Action get increment => _counterController.action((value) {
+        //implement your business logic here
         return ++value;
       });
 

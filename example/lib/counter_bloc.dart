@@ -1,4 +1,3 @@
-import 'package:flutter/rendering.dart';
 import 'package:simple_bloc/simple_bloc.dart';
 
 class CounterBloc extends Bloc {
@@ -6,7 +5,7 @@ class CounterBloc extends Bloc {
 
   Stream<int> get counterOut => _counterController.stream;
 
-  VoidCallback get increment => _counterController.action((value) {
+  Action get increment => _counterController.action((value) {
         return ++value;
       });
 

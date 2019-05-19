@@ -1,7 +1,11 @@
-## [1.0.1] - TODO: Add release date.
+## [1.0.2] - May 19, 2019
+
+- Getter for BuildContext inside BLoC instance
+
+## [1.0.1] - May 17, 2019
 
 - Documented example
 
-## [1.0.0] - TODO: Add release date.
+## [1.0.0] - May 16, 2019
 
 - Initial version

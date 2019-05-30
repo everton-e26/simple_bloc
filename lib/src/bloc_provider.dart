@@ -13,8 +13,15 @@ class BlocProvider extends StatefulWidget {
   _BlocProviderState createState() => _BlocProviderState();
 
   static T of<T extends Bloc>(BuildContext context) {
-    final manager = Provider.of<BlocInstanceManager>(context);
-    return manager.of<T>(context);
+    try {
+      final manager = Provider.of<BlocInstanceManager>(context);
+      final bloc = manager.of<T>(context);
+      return bloc;
+    } catch (e) {
+      final _BlocProviderState state =
+          context.ancestorStateOfType(const TypeMatcher<_BlocProviderState>());
+      return BlocProvider.of<T>(state.context);
+    }
   }
 }
 

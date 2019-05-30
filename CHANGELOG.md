@@ -1,3 +1,7 @@
+## [1.1.1] - May 29, 2019
+
+- Multiple Providers support
+
 ## [1.1.0] - May 19, 2019
 
 - initialize method for BLoC

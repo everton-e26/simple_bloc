@@ -1,9 +1,9 @@
 <img src="https://raw.githubusercontent.com/everton-e26/simple_bloc/master/example/assets/simple_bloc_logo_bg.jpg" width="220">
 <br/><br/>
-A simple alternative to the implementation of Dimension C-137
+A simple alternative to the BLoC implementation created in Dimension C-137
 <br/><br/>
 
-[![Version](https://img.shields.io/badge/version-1.1.0-blue.svg)](https://pub.dev/packages/simple_bloc)
+[![Version](https://img.shields.io/badge/version-1.1.1-blue.svg)](https://pub.dev/packages/simple_bloc)
 
 ## Getting started
 
@@ -11,7 +11,7 @@ You should ensure that you add the simple_bloc as a dependency in your flutter p
 
 ```yaml
 dependencies:
-  simple_bloc: "^1.1.0"
+  simple_bloc: "^1.1.1"
 ```
 
 read more at [how to install](https://pub.dev/packages/simple_bloc#-installing-tab-)

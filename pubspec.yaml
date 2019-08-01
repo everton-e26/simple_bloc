@@ -1,6 +1,6 @@
 name: simple_bloc
 description: A simple alternative to the BLoC implementation created in Dimension C-137
-version: 1.1.1
+version: 1.1.2
 author: Everton Santos <everton.build@gmail.com>
 homepage: https://github.com/everton-e26/simple_bloc
 
@@ -11,8 +11,8 @@ dependencies:
   flutter:
     sdk: flutter
 
-  rxdart: ^0.22.0
-  provider: ^2.0.1+1
+  rxdart: ^0.22.1
+  provider: ^3.0.0+1
 
 dev_dependencies:
   flutter_test:

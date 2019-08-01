@@ -4,7 +4,7 @@ import 'package:simple_bloc/simple_bloc.dart';
 abstract class Bloc {
   BuildContext _context;
   BuildContext get context => _context;
-  void initialize();
+  void initialize() {}
   void dispose();
 }
 

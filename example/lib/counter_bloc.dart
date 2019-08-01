@@ -13,7 +13,4 @@ class CounterBloc extends Bloc {
   void dispose() {
     _counterController.dispose();
   }
-
-  @override
-  void initialize() {}
 }

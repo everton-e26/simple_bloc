@@ -1,3 +1,8 @@
+## [1.1.2] - Aug 01, 2019
+
+- initalize method on BLoC is optional
+- updated dependencies
+
 ## [1.1.1] - May 29, 2019
 
 - Multiple Providers support

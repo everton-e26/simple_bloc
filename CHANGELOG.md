@@ -1,3 +1,8 @@
+## [1.1.3] - Aug 05, 2019
+
+- refactor Action and Input typedefs
+- implmented hasValue and value props
+
 ## [1.1.2] - Aug 01, 2019
 
 - initalize method on BLoC is optional

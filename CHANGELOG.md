@@ -1,3 +1,7 @@
+## [1.1.4] - Aug 07, 2019
+
+- Builder constructor for BlocProvider
+
 ## [1.1.3] - Aug 05, 2019
 
 - refactor Action and Input typedefs

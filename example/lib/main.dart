@@ -8,9 +8,9 @@ void main() => runApp(MyApp());
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
+    return BlocProvider.builder(
       blocs: [BlocBuilder(() => CounterBloc())],
-      child: MaterialApp(
+      builder: (context) => MaterialApp(
         title: 'Simple BLoC Example',
         home: CounterScreen(),
         debugShowCheckedModeBanner: false,

@@ -9,6 +9,19 @@ class BlocProvider extends StatefulWidget {
 
   BlocProvider({Key key, this.blocs, this.child}) : super(key: key);
 
+  factory BlocProvider.builder(
+      {Key key,
+      List<BlocBuilder> blocs,
+      Widget Function(BuildContext context) builder}) {
+    return BlocProvider(
+      key: key,
+      blocs: blocs,
+      child: Builder(
+        builder: builder,
+      ),
+    );
+  }
+
   @override
   _BlocProviderState createState() => _BlocProviderState();
 

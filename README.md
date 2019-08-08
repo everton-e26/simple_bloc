@@ -11,7 +11,7 @@ You should ensure that you add the simple_bloc as a dependency in your flutter p
 
 ```yaml
 dependencies:
-  simple_bloc: "^1.1.3"
+  simple_bloc: "^1.1.4"
 ```
 
 read more at [how to install](https://pub.dev/packages/simple_bloc#-installing-tab-)

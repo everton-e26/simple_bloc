@@ -1,11 +1,24 @@
+import 'dart:async';
+
 import 'package:flutter/widgets.dart';
+import 'package:rxdart/subjects.dart';
 import 'package:simple_bloc/simple_bloc.dart';
 
 abstract class Bloc {
   BuildContext _context;
   BuildContext get context => _context;
+  final _onDisposeController = BehaviorSubject<Bloc>();
   void initialize() {}
-  void dispose();
+  void dispose() {
+    _onDisposeController.sink.add(this);
+    _onDisposeController.close();
+  }
+
+  StreamSubscription onDispose(Function() disposing) {
+    return _onDisposeController.stream.listen((data) {
+      disposing();
+    });
+  }
 }
 
 class BlocInstanceManager {

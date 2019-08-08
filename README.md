@@ -3,7 +3,7 @@
 A simple alternative to the BLoC implementation created in Dimension C-137
 <br/><br/>
 
-[![Version](https://img.shields.io/badge/version-1.1.1-blue.svg)](https://pub.dev/packages/simple_bloc)
+[![Version](https://img.shields.io/badge/version-1.1.5-blue.svg)](https://pub.dev/packages/simple_bloc)
 
 ## Getting started
 
@@ -11,7 +11,7 @@ You should ensure that you add the simple_bloc as a dependency in your flutter p
 
 ```yaml
 dependencies:
-  simple_bloc: "^1.1.4"
+  simple_bloc: "^1.1.5"
 ```
 
 read more at [how to install](https://pub.dev/packages/simple_bloc#-installing-tab-)

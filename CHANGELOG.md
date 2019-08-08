@@ -1,3 +1,8 @@
+## [1.1.5] - Aug 08, 2019
+
+- onDispose listenable on Bloc
+- BlocController can listen Bloc dispose
+
 ## [1.1.4] - Aug 07, 2019
 
 - Builder constructor for BlocProvider

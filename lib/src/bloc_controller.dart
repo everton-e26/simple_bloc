@@ -1,4 +1,5 @@
 import 'package:rxdart/rxdart.dart';
+import 'package:simple_bloc/src/bloc.dart';
 
 typedef void Action();
 
@@ -7,9 +8,14 @@ typedef void Input<T>(T input);
 class BlocController<T> {
   final _controller = BehaviorSubject<T>();
 
-  BlocController({T initalData}) {
+  BlocController({T initalData, Bloc listenBlocClose}) {
     if (initalData != null) {
       _controller.add(initalData);
+    }
+    if (listenBlocClose != null) {
+      listenBlocClose.onDispose(() {
+        dispose();
+      });
     }
   }
 

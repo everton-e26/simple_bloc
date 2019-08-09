@@ -9,10 +9,14 @@ abstract class Bloc {
   BuildContext get context => _context;
   final _onDisposeController = BehaviorSubject<Bloc>();
   void initialize() {}
-  void dispose() {
+
+  void _dispose() {
     _onDisposeController.sink.add(this);
     _onDisposeController.close();
+    dispose();
   }
+
+  void dispose() {}
 
   StreamSubscription onDispose(Function() disposing) {
     return _onDisposeController.stream.listen((data) {
@@ -44,7 +48,7 @@ class BlocInstanceManager {
 
   void dispose() {
     _blocs.forEach((key, bloc) {
-      bloc.dispose();
+      bloc._dispose();
     });
   }
 }

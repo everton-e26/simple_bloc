@@ -1,3 +1,7 @@
+## [1.1.6] - Aug 08, 2019
+
+- instantiate the blocs on initState
+
 ## [1.1.5] - Aug 08, 2019
 
 - onDispose listenable on Bloc

@@ -42,8 +42,13 @@ class _BlocProviderState extends State<BlocProvider> {
   BlocInstanceManager _manager;
 
   @override
-  Widget build(BuildContext context) {
+  void initState() {
+    super.initState();
     _manager = BlocInstanceManager(widget.blocs);
+  }
+
+  @override
+  Widget build(BuildContext context) {
     return MultiProvider(
       providers: [Provider<BlocInstanceManager>.value(value: _manager)],
       child: widget.child,

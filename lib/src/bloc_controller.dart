@@ -27,6 +27,10 @@ class BlocController<T> {
 
   Sink<T> get sink => _controller.sink;
 
+  add(T event) {
+    _controller.add(event);
+  }
+
   Action action(T Function(T) handler) => () {
         final newValue = handler(_controller.value);
         _controller.sink.add(newValue);

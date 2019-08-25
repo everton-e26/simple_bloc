@@ -9,11 +9,6 @@ A simple alternative to the BLoC implementation created in Dimension C-137
 
 You should ensure that you add the simple_bloc as a dependency in your flutter project.
 
-```yaml
-dependencies:
-  simple_bloc: "^1.1.6"
-```
-
 read more at [how to install](https://pub.dev/packages/simple_bloc#-installing-tab-)
 
 ## Usage

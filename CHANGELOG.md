@@ -1,3 +1,7 @@
+## [1.1.6] - Aug 25, 2019
+
+- add method to controller
+
 ## [1.1.6] - Aug 08, 2019
 
 - instantiate the blocs on initState

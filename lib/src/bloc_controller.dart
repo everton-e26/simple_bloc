@@ -22,6 +22,8 @@ class BlocController<T> {
   T get value => _controller.value;
 
   bool get hasValue => _controller.hasValue;
+  bool get isClosed => _controller.isClosed;
+  bool get isPaused => _controller.isPaused;
 
   Stream<T> get stream => _controller.stream;
 

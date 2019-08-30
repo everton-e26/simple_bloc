@@ -1,4 +1,9 @@
-## [1.1.6] - Aug 25, 2019
+## [1.1.8] - Aug 30, 2019
+
+- add getter for isClosed and isPaused to controller
+- updated packages dependencies
+
+## [1.1.7] - Aug 25, 2019
 
 - add method to controller
 

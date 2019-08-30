@@ -3,8 +3,6 @@
 A simple alternative to the BLoC implementation created in Dimension C-137
 <br/><br/>
 
-[![Version](https://img.shields.io/badge/version-1.1.6-blue.svg)](https://pub.dev/packages/simple_bloc)
-
 ## Getting started
 
 You should ensure that you add the simple_bloc as a dependency in your flutter project.

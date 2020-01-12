@@ -32,7 +32,7 @@ class BlocProvider extends StatefulWidget {
       return bloc;
     } catch (e) {
       final _BlocProviderState state =
-          context.ancestorStateOfType(const TypeMatcher<_BlocProviderState>());
+          context.findAncestorStateOfType<_BlocProviderState>();
       return BlocProvider.of<T>(state.context);
     }
   }

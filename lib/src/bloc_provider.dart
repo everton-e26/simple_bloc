@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:simple_bloc/src/bloc.dart';
 import 'package:simple_bloc/src/bloc_builder.dart';
 
+/// Provider class
 class BlocProvider extends StatefulWidget {
   final List<BlocBuilder> blocs;
   final Widget child;

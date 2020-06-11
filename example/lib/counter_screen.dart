@@ -22,14 +22,14 @@ class CounterScreen extends StatelessWidget {
             ),
             Text(
               "The counter is",
-              style: Theme.of(context).textTheme.display2,
+              style: Theme.of(context).textTheme.headline3,
             ),
             StreamBuilder(
               stream: bloc.counterOut,
               builder: (_, snapshot) {
                 return Text(
                   snapshot.data.toString(),
-                  style: Theme.of(context).textTheme.display3,
+                  style: Theme.of(context).textTheme.headline2,
                 );
               },
             ),

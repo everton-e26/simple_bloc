@@ -1,10 +1,13 @@
 import 'package:rxdart/rxdart.dart';
 import 'package:simple_bloc/src/bloc.dart';
 
+/// Action typedef
 typedef void Action();
 
+/// Input typedef
 typedef void Input<T>(T input);
 
+/// Controller base class
 class BlocController<T> {
   final _controller = BehaviorSubject<T>();
 

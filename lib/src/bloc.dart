@@ -4,6 +4,7 @@ import 'package:flutter/widgets.dart';
 import 'package:rxdart/subjects.dart';
 import 'package:simple_bloc/simple_bloc.dart';
 
+/// Base bloc class
 abstract class Bloc {
   BuildContext _context;
   BuildContext get context => _context;

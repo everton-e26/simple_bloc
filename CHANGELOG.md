@@ -1,3 +1,7 @@
+## [1.1.9] - Jun 11, 2020
+
+- updated packages dependencies
+
 ## [1.1.8] - Aug 30, 2019
 
 - add getter for isClosed and isPaused to controller

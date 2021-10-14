@@ -11,7 +11,7 @@ typedef void Input<T>(T input);
 class BlocController<T> {
   final _controller = BehaviorSubject<T>();
 
-  BlocController({T initalData, Bloc listenBlocClose}) {
+  BlocController({T? initalData, Bloc? listenBlocClose}) {
     if (initalData != null) {
       _controller.add(initalData);
     }
@@ -22,7 +22,7 @@ class BlocController<T> {
     }
   }
 
-  T get value => _controller.value;
+  T? get value => _controller.valueOrNull;
 
   bool get hasValue => _controller.hasValue;
   bool get isClosed => _controller.isClosed;
@@ -36,13 +36,13 @@ class BlocController<T> {
     _controller.add(event);
   }
 
-  Action action(T Function(T) handler) => () {
-        final newValue = handler(_controller.value);
+  Action action(T Function(T?) handler) => () {
+        final newValue = handler(_controller.valueOrNull);
         _controller.sink.add(newValue);
       };
 
-  Input<T> input(T Function(T, T) handler) => (inputValue) {
-        final newValue = handler(inputValue, _controller.value);
+  Input<T> input(T Function(T?, T?) handler) => (inputValue) {
+        final newValue = handler(inputValue, _controller.valueOrNull);
         _controller.sink.add(newValue);
       };
 

@@ -5,15 +5,15 @@ import 'package:simple_bloc/src/bloc_builder.dart';
 
 /// Provider class
 class BlocProvider extends StatefulWidget {
-  final List<BlocBuilder> blocs;
-  final Widget child;
+  final List<BlocBuilder>? blocs;
+  final Widget? child;
 
-  BlocProvider({Key key, this.blocs, this.child}) : super(key: key);
+  BlocProvider({Key? key, this.blocs, this.child}) : super(key: key);
 
   factory BlocProvider.builder(
-      {Key key,
-      List<BlocBuilder> blocs,
-      Widget Function(BuildContext context) builder}) {
+      {Key? key,
+      List<BlocBuilder>? blocs,
+      required Widget Function(BuildContext context) builder}) {
     return BlocProvider(
       key: key,
       blocs: blocs,
@@ -26,21 +26,21 @@ class BlocProvider extends StatefulWidget {
   @override
   _BlocProviderState createState() => _BlocProviderState();
 
-  static T of<T extends Bloc>(BuildContext context) {
+  static T? of<T extends Bloc>(BuildContext context) {
     try {
       final manager = Provider.of<BlocInstanceManager>(context);
       final bloc = manager.of<T>(context);
       return bloc;
     } catch (e) {
       final _BlocProviderState state =
-          context.findAncestorStateOfType<_BlocProviderState>();
+          context.findAncestorStateOfType<_BlocProviderState>()!;
       return BlocProvider.of<T>(state.context);
     }
   }
 }
 
 class _BlocProviderState extends State<BlocProvider> {
-  BlocInstanceManager _manager;
+  BlocInstanceManager? _manager;
 
   @override
   void initState() {
@@ -51,14 +51,14 @@ class _BlocProviderState extends State<BlocProvider> {
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
-      providers: [Provider<BlocInstanceManager>.value(value: _manager)],
+      providers: [Provider<BlocInstanceManager?>.value(value: _manager)],
       child: widget.child,
     );
   }
 
   @override
   void dispose() {
-    _manager.dispose();
+    _manager!.dispose();
     super.dispose();
   }
 }

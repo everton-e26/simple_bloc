@@ -5,14 +5,14 @@ import 'package:simple_bloc/src/bloc_builder.dart';
 
 /// Provider class
 class BlocProvider extends StatefulWidget {
-  final List<BlocBuilder>? blocs;
+  final List<BlocBuilder> blocs;
   final Widget? child;
 
-  BlocProvider({Key? key, this.blocs, this.child}) : super(key: key);
+  BlocProvider({Key? key, required this.blocs, this.child}) : super(key: key);
 
   factory BlocProvider.builder(
       {Key? key,
-      List<BlocBuilder>? blocs,
+      required List<BlocBuilder> blocs,
       required Widget Function(BuildContext context) builder}) {
     return BlocProvider(
       key: key,
@@ -31,11 +31,13 @@ class BlocProvider extends StatefulWidget {
       final manager = Provider.of<BlocInstanceManager>(context);
       final bloc = manager.of<T>(context);
       return bloc;
-    } catch (e) {
-      final _BlocProviderState state =
-          context.findAncestorStateOfType<_BlocProviderState>()!;
+    } catch (_) {}
+    final state = context.findAncestorStateOfType<_BlocProviderState>();
+    if (state != null) {
       return BlocProvider.of<T>(state.context);
     }
+
+    return null;
   }
 }
 

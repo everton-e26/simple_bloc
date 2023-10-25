@@ -27,20 +27,20 @@ abstract class Bloc {
 }
 
 class BlocInstanceManager {
-  final List<BlocBuilder>? blocs;
-  final Map<String, Bloc?> _blocs = {};
+  final List<BlocBuilder> blocs;
+  final Map<String, Bloc> _blocs = {};
 
   BlocInstanceManager(this.blocs);
 
-  T? of<T extends Bloc?>(BuildContext context) {
+  T? of<T extends Bloc>(BuildContext context) {
     String type = T.toString();
-    T? bloc;
+    late T bloc;
     if (_blocs.containsKey(type)) {
-      bloc = _blocs[type] as T?;
+      bloc = _blocs[type] as T;
     } else {
-      BlocBuilder b = blocs!.firstWhere((b) => b.build is T Function());
-      bloc = b.build() as T?;
-      bloc!._context = context;
+      BlocBuilder b = blocs.firstWhere((b) => b.build is T Function());
+      bloc = b.build() as T;
+      bloc._context = context;
       bloc.initialize();
       _blocs.putIfAbsent(type, () => bloc);
     }

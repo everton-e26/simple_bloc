@@ -36,9 +36,11 @@ class BlocController<T> {
     _controller.add(event);
   }
 
-  Action action(T Function(T?) handler) => () {
+  Action action(T? Function(T?) handler) => () {
         final newValue = handler(_controller.valueOrNull);
-        _controller.sink.add(newValue);
+        if (newValue != null) {
+          _controller.sink.add(newValue);
+        }
       };
 
   Input<T> input(T Function(T?, T?) handler) => (inputValue) {

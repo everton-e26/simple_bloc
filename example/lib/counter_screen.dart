@@ -5,7 +5,7 @@ import 'counter_bloc.dart';
 class CounterScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final bloc = BlocProvider.of<CounterBloc>(context);
+    final bloc = BlocProvider.of<CounterBloc>(context)!;
     return Scaffold(
       body: Center(
         child: Column(

@@ -49,7 +49,7 @@ class BlocInstanceManager {
 
   void dispose() {
     _blocs.forEach((key, bloc) {
-      bloc!._dispose();
+      bloc._dispose();
     });
   }
 }
